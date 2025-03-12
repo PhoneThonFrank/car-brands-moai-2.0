@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Assignment</title>
+    <!-- Bootstrap CDN Links -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Icon CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="./Images/favicon.svg" type="image/x-icon">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border-radius: 0 !important;
+        }
+
+        ul.nav-pills a.active {
+            background-color: orange !important;
+        }
+
+        .btn-close {
+            transition: 0.3s;
+        }
+
+        .btn-close:hover {
+            opacity: 0.7 !important;
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar {
+                display: none;
+            }
+
+            .sidebar-content {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            .offcanvas-sidebar {
+                display: none;
+            }
+
+            .offcanvas-content {
+                display: none;
+            }
+        }
+
+
+        .custom-nav-items {
+            background-color: rgb(216, 166, 74);
+        }
+
+        .car-title {
+            padding: 5px 10px;
+            transform: skew(-20deg);
+            width: 175px;
+            text-align: center;
+        }
+
+        .sidebar {
+            padding: 0 5px !important;
+        }
+
+        #car1,
+        #car11 {
+            background: url('./car_images/1.webp');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+
+        #car2,
+        #car21 {
+            background: url('./car_images/2.jfif');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car3,
+        #car31 {
+            background: url('./car_images/3.jfif');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car4,
+        #car41 {
+            background: url('./car_images/4.jfif');
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car5,
+        #car51 {
+            background: url('./car_images/5.png');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car6,
+        #car61 {
+            background: url('./car_images/6.jfif');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car7,
+        #car71 {
+            background: url('./car_images/7.jfif');
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+        
+        #car8,
+        #car81 {
+            background: url('./car_images/8.png');
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car9,
+        #car91 {
+            background: url('./car_images/9.png');
+            color: rgb(0, 0, 0);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car10,
+        #car101 {
+            background: url('./car_images/10.png');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car11a,
+        #car11a1 {
+            background: url('./car_images/11.png');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car12a,
+        #car12a1 {
+            background: url('./car_images/12.jpg');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car13a,
+        #car13a1 {
+            background: url('./car_images/13.png');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car14a,
+        #car14a1 {
+            background: url('./car_images/14.jfif');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car15a,
+        #car15a1 {
+            background: url('./car_images/15.webp');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car16a,
+        #car16a1 {
+            background: url('./car_images/16.jpg');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        #car17a,
+        #car17a1 {
+            background: url('./car_images/17.webp');
+            color: rgb(255, 255, 255);
+            padding: 10px;
+            border-radius: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vh - 150px);
+            overflow-y: auto;
+        }
+
+        *{
+            scrollbar-color: rgb(28, 28, 28) rgb(93, 93, 93);
+        }
+    </style>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.826);">
+
+    <!-- start of navbar -->
+    <div class="mynav sticky-top">
+        <nav class="navbar navbar-expand-md bg-warning">
+            <!-- the menu button -->
+            <button class="navbar-toggler ms-5" data-bs-toggle="offcanvas" type="button" data-bs-target="#sidebar">Menu
+                <i class="bi bi-arrow-right"></i></button>
+            <!-- navbar brand -->
+            <!-- <a href="#" class="navbar-brand ms-md-5"><img src="./images/logo.svg" alt="logo" width="60px"
+                    height="60px"></a> -->
+            <!-- navbar brand as text -->
+            <a href="" class="navbar-brand ms-md-5"><span class="navbar-text"><span
+                        class="badge text-bg-danger rounded-5"><i class="bi bi-car-front"
+                            style="font-size: 30px;"></i></span></span></a>
+            <!-- Toggler button -->
+            <button class="navbar-toggler me-5" data-bs-toggle="collapse" type="button" data-bs-target="#nav_id"><span
+                    class="navbar-toggler-icon"></span></button>
+            <!-- Nav items container -->
+            <div class="collapse navbar-collapse ms-5 ms-md-0" id="nav_id">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu myownbg mb-3">
+                            <li><a href="#" class="dropdown-item ">Drive around the world</a></li>
+                            <li><a href="#" class="dropdown-item ">Free driving</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-5 ms-auto">
+                    <li class="nav-item">
+                        <div class="btn-group">
+                            <button class="btn btn-dark border-2 border-dark myregbtn" data-bs-toggle="modal"
+                                data-bs-target="#login_modal">Login</button>
+
+                            <button class="btn btn-danger border-2 border-dark myregbtn" data-bs-toggle="modal"
+                                data-bs-target="#register_modal">Register</button>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- end of navbar -->
+
+    <!-- my lovely offcanvas -->
+
+    <div class="offcanvas offcanvas-start offcanvas-md bg-dark offcanvas-sidebar" data-bs-backdrop="false" id="sidebar">
+        <div
+            class="offcanvas-header border border-1 border-light border-bottom border-start-0 border-top-0 border-end-0">
+            <h2 class="offcanvas-title text-light">Car Brands</h2>
+            <button type="button" class="btn-close" style="background-color: red; opacity: 1;"
+                data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body ">
+            <div style="overflow-y: auto;">
+
+
+                <h3 class="ms-3 text-light car-title" style="background-color: #D40000; ">Ferrari</h3>
+                <nav>
+                    <ul class="nav nav-pills ms-2">
+                        <li class="nav-item my-1 d-block w-100"><a href="#car11"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items active"
+                                data-bs-toggle="tab">Ferrari Laferrari</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car21"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Ferrari F50</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car31"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Ferrari Enzo</a></li>
+
+
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #005F9E; ">Bugatti</h3>
+
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car41"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Veryon Grand Sport Vitesse</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car51"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Mistral</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car61"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Chiron Super Sport 300+</a></li>
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #6F6F6F; ">Pagani</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car71"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Huayra BC</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car81"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Huayra Roadster BC</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car91"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Zonda HP Barchetta</a></li>
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #7FFF00; ">Lamborghini</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car101"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Sian FKP 37</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car11a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Huracán STO</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car12a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Centenario</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car13a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Murciélago LP670-4 SV</a></li>
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #FF8000; ">McLaren</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car14a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren Speedtail</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car15a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren P1</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car16a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren Senna</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car17a1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren F1</a></li>္
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar bg-dark" style="height: calc(100vh - 70px); overflow-y: auto;">
+                <br>
+                <h3 class="ms-4 text-light car-title" style="background-color: #D40000; ">Ferrari</h3>
+                <nav>
+                    <ul class="nav nav-pills ms-2 px-2">
+                        <li class="nav-item my-1 d-block w-100"><a href="#car1"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items active"
+                                data-bs-toggle="tab">Ferrari Laferrari</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car2"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Ferrari F50</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car3"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Ferrari Enzo</a></li>
+
+
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #005F9E; ">Bugatti</h3>
+
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car4"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Veryon Grand Sport Vitesse</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car5"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Mistral</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car6"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Bugatti Chiron Super Sport 300+</a></li>
+
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #6F6F6F; ">Pagani</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car7"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Huayra BC</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car8"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Huayra Roadster BC</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car9"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Pagani Zonda HP Barchetta</a></li>
+
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #7FFF00; ">Lamborghini</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car10"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Sian FKP 37</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car11a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Huracán STO</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car12a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Centenario</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car13a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">Lamborghini Murciélago LP670-4 SV</a></li>
+
+                        <h3 class="ms-2 text-light car-title my-2" style="background-color: #FF8000; ">McLaren</h3>
+
+                        <li class="nav-item my-1 d-block w-100"><a href="#car14a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren Speedtail</a>
+                        </li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car15a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren P1</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car16a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren Senna</a></li>
+                        <li class="nav-item my-1 d-block w-100"><a href="#car17a"
+                                class="nav-link btn-warning btn text-start text-light custom-nav-items"
+                                data-bs-toggle="tab">McLaren F1</a></li>
+                    </ul>
+                    <br><br><br><br>
+                </nav>
+            </div>
+            <div class="col-md-9">
+                <!-- tab content for sidebar -->
+                <div class="tab-content sidebar-content mt-3">
+                    <div class="tab-pane active" id="car1">
+                        <h2>Ferrari Laferrari <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+
+
+                            Name - Ferrari Laferrari<br>
+                            Production - 2013 (499 units produced plus one extra for auction)<br>
+                            Original price - $1,400,000<br>
+                            Current Market Price - $5,000,000 to $7,000,000<br>
+                            Engine - 6.3L naturally aspirated v12<br>
+                            Top speed - 352 km/h (218mph)<br>
+                            Power - 963HP (total)<br>
+                            v12 engine’s - 800HP<br>
+                            electric motor - 163HP<br>
+                            Torque - 900Nm<br>
+                            Transmission - 7 speed dual-clutch automatic<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,585kg (3,495lbs)<br>
+                            First Ferrari Hybrid Hypercar and the most powerful naturally aspirated v12 Ferrari ever
+                            made.
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car2">
+                        <h2>Ferrari F50 <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Ferrari F50 <br>
+                            Production - 1995 - 1997 (349 units produced)<br>
+                            Original Price - $475,000<br>
+                            Current Market Price - $3,500,000 - $5,500,000<br>
+                            Engine - 4.7L naturally Aspirated V12 (From Formula 1)<br>
+                            Top speed - 325km/h (202mph)<br>
+                            Power - 520HP <br>
+                            Torque - 471Nm <br>
+                            Transmission - 6 speed manual<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,230kg (2,712lbs)<br>
+                            First Ferrari with a fully carbon-fiber monocoque chassis, directly influenced by Formula 1
+                            technology.<br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car3">
+                        <h2>Ferrari Enzo <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Ferrari Enzo <br>
+                            Production - 2002 - 2004 (399 units produced + 1 for the pope)<br>
+                            Original Price - $659,000<br>
+                            Current Market Price - $3,000,000 - $5,000,000 <br>
+                            Engine - 6.0L naturally aspirated v12<br>
+                            Top speed - 355km/h (221mph)<br>
+                            Power - 660HP<br>
+                            Torque - 657Nm<br>
+                            Transmission - 6 speed automated manual (F1 Gearbox)<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,480kg (3,263lbs)<br>
+                            First naturally aspirated production car of its time and the first Ferrari to feature an
+                            F1-inspired gearbox.<br>
+
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car4">
+                        <h2>Bugatti Veryon Grand Sport Vitesse <span class="badge rounded-5"
+                                style="background-color:#005F9E;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Veryon Grand Sport Vitesse <br>
+                            Production - 2012 - 2015 (92 units produced) <br>
+                            Original Price - $2,500,000<br>
+                            Current Market Price - $3,000,000 - $4,500,000<br>
+                            Engine - 8.0L Quad- Turbocharged W16<br>
+                            Top speed - 408.84km/h (254.04mph) <br>
+                            Power - 1,200HP<br>
+                            Torque - 1,500Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,990kg (4,387lbs)<br>
+                            The fastest open-top production car. <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car5">
+                        <h2>Bugatti Mistral <span class="badge rounded-5" style="background-color:#005F9E;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Mistral <br>
+                            Production - 2024 - Present (99 units produced) <br>
+                            Original Price - $5,000,000<br>
+                            Current Market Price - $6,000,000+ (Prices expected to rise due to exclusivity)<br>
+                            Engine - 8.0L Quad-Turbocharged W16 <br>
+                            Top speed - 420km/h (261mph)<br>
+                            Power - 1,600HP<br>
+                            Torque - 1,600Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive)<br>
+                            Weight - Estimated around 1,990kg (4,387lbs)<br>
+
+                            Fastest roadster Bugatti has ever produced. <br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car6">
+                        <h2>Bugatti Chiron Super Sport 300+ <span class="badge rounded-5"
+                                style="background-color:#005F9E;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Chiron Super Sport 300+ <br>
+                            Production - 2021 - 2022 (30 units produced)<br>
+                            Original Price - $3,900,000<br>
+                            Current Market Price - $5,000,000 - $6,500,000+ <br>
+                            Engine - 8.0L Quad-Turbocharged W16 <br>
+                            Top speed - 490.48km/h (304.77mph) <br>
+                            Power - 1,600HP<br>
+                            Torque - 1,600Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive)<br>
+                            Weight - 1,995kg (4,398lbs)<br>
+                            First production car to break the 300 mph record.<br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car7">
+                        <h2>Pagani Huayra BC <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Huayra BC <br>
+                            Production - 2016–2019 (Limited to 20 units) <br>
+                            Original Price - $2,500,000 <br>
+                            Current Market Price - $3,500,000+ <br>
+                            Engine - 6.0L Twin-Turbocharged V12 (Mercedes-AMG) <br>
+                            Top Speed - 370 km/h (230 mph) <br>
+                            Power - 791 HP <br>
+                            Torque - 1,050 Nm (774 lb-ft) <br>
+                            Transmission - 7-speed Xtrac sequential manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,218 kg (2,685 lbs) <br>
+                            World Record - One of the lightest and most powerful<br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car8">
+                        <h2>Pagani Huayra Roadster BC <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Huayra Roadster BC <br>
+                            Production - 2019–Present (Limited to 40 units) <br>
+                            Original Price - $3,500,000 <br>
+                            Current Market Price - $4,500,000+ <br>
+                            Engine - 6.0L Twin-Turbocharged V12 (Mercedes-AMG) <br>
+                            Top Speed - 370 km/h (230 mph) <br>
+                            Power - 802 HP <br>
+                            Torque - 1,050 Nm (774 lb-ft) <br>
+                            Transmission - 7-speed Xtrac sequential manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,250 kg (2,755 lbs) <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car9">
+                        <h2>Pagani Zonda HP Barchetta <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Zonda HP Barchetta <br>
+                            Production - 2017 (Limited to 3 units) <br>
+                            Original Price - $17,500,000 <br>
+                            Current Market Price - $20,000,000+ <br>
+                            Engine - 7.3L Naturally Aspirated V12 (Mercedes-AMG) <br>
+                            Top Speed - 355 km/h (221 mph) <br>
+                            Power - 789 HP <br>
+                            Torque - 850 Nm (627 lb-ft) <br>
+                            Transmission - 6-speed manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,250 kg (2,755 lbs) <br>
+                            World Record - One of the most expensive new cars ever sold <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car10">
+                        <h2>Lamborghini Sian FKP 37 <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Sian FKP 37 <br>
+                            Production - 2020–2021 (Limited to 63 Coupes, 19 Roadsters) <br>
+                            Original Price - $3,600,000 <br>
+                            Current Market Price - $4,500,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 + 48V Hybrid System <br>
+                            Top Speed - 350 km/h (217 mph) <br>
+                            Power - 819 HP (combined) <br>
+                            Torque - 760 Nm (561 lb-ft) <br>
+                            Transmission - 7-speed automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,595 kg (3,516 lbs) <br>
+                            World Record - Lamborghini's first-ever hybrid production car <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car11a">
+                        <h2>Lamborghini Huracán STO <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Huracán STO <br>
+                            Production - 2021–Present <br>
+                            Original Price - $327,838 <br>
+                            Current Market Price - $400,000+ <br>
+                            Engine - 5.2L Naturally Aspirated V10 <br>
+                            Top Speed - 310 km/h (193 mph) <br>
+                            Power - 640 HP <br>
+                            Torque - 565 Nm (417 lb-ft) <br>
+                            Transmission - 7-speed dual-clutch automatic <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,339 kg (2,952 lbs) <br>
+                            World Record - One of the lightest and most track-focused<br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car12a">
+                        <h2>Lamborghini Centenario <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Centenario <br>
+                            Production - 2016–2017 (Limited to 20 Coupes, 20 Roadsters) <br>
+                            Original Price - $1,900,000 <br>
+                            Current Market Price - $2,500,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 <br>
+                            Top Speed - 350 km/h (217 mph) <br>
+                            Power - 770 HP <br>
+                            Torque - 690 Nm (509 lb-ft) <br>
+                            Transmission - 7-speed ISR automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,520 kg (3,351 lbs) <br>
+                            Built to celebrate Lamborghini's 100th anniversary <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car13a">
+                        <h2>Lamborghini Murciélago LP670-4 SV <span class="badge rounded-5"
+                                style="background-color:#7FFF00;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Murciélago LP670-4 SV <br>
+                            Production - 2009–2010 (Limited to 186 units) <br>
+                            Original Price - $450,000 <br>
+                            Current Market Price - $1,000,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 <br>
+                            Top Speed - 342 km/h (213 mph) <br>
+                            Power - 670 HP <br>
+                            Torque - 660 Nm (487 lb-ft) <br>
+                            Transmission - 6-speed manual / 6-speed e-gear automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,565 kg (3,450 lbs) <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car14a">
+                        <h2>McLaren Speedtail <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren Speedtail <br>
+                                    Production - 2019 - 2020 (106 units produced) <br>
+                                    Original Price - $2,250,000 <br>
+                                    Current Market Price - $3,500,000 - $4,000,000+ <br>
+                                    Engine - 4.0L Twin-Turbocharged V8 Hybrid <br>
+                                    Top Speed - 403 km/h (250 mph) <br>
+                                    Power - 1,035 hp(total) <br>
+                                    V8 Engine Power - 746HP
+                                    Electric Motor Power - 308HP<br>
+                                    Torque - 848 Nm (625 lb-ft) <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD (Rear-Wheel Drive) <br>
+                                    Weight - 1,430 kg (3,153 lbs) <br>
+                                    Fastest McLaren road car ever produced<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car15a">
+                        <h2>McLaren P1 <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren P1 <br>
+                                    Production - 2013 - 2015 (375 units produced) <br>
+                                    Original Price - $1,150,000 <br>
+                                    Current Market Price - $1,800,000 - $2,500,000+ <br>
+                                    Engine - 3.8L Twin-Turbocharged V8 Hybrid <br>
+                                    Top Speed - 350 km/h (217 mph) <br>
+                                    Power - 903 HP (Total) <br>
+                                    V8 Engine Power - 727 HP
+                                    Electric Motor Power - 177 HP
+                                    Torque - 900 Nm <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD <br>
+                                    Weight - 1,490 kg (3,284 lbs) <br>
+                                    One of the first hybrid hypercars and among the fastest production cars of its time.<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car16a">
+                        <h2>McLaren Senna <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren Senna <br>
+                                    Production - 2018 - 2019 (500 units produced) <br>
+                                    Original Price - £750,000 (Approx. $1,000,000) <br>
+                                    Current Market Price - Around $2,000,000 <br>
+                                    Engine - 4.0L Twin-Turbocharged V8 <br>
+                                    Top Speed - 340 km/h (211 mph) <br>
+                                    Power - 789 hp<br>
+                                    Torque - 800 Nm (590 lb-ft) <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD (Rear-Wheel Drive) <br>
+                                    Weight - 1,198 kg (2,641 lbs) <br>
+                                    Features one of the most advanced braking systems, capable of stopping from 200 km/h (124 mph) in just 100 meters.<br>
+                                    One of the special car named after a famous Brazilian Racer, Ayrton Senna.<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car17a">
+                        <h2>McLaren F1 <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren F1 <br>
+                                    Production - 1992–1998 (106 units produced)<br>
+                                    Original Price - Around $1,000,000<br>
+                                    Current Market Price - $15,000,000+ (some models have sold for even higher)<br>
+                                    Engine - 6.1L Naturally Aspirated BMW V12<br>
+                                    Top Speed - 391 km/h (243 mph) (World Record for Fastest Production Car in 1998)<br>
+                                    Power - 627 HP<br>
+                                    Torque - 650 Nm<br>
+                                    Transmission - 6-speed manual<br>
+                                    Drivetrain - RWD<br>
+                                    Weight - 1,140 kg (2,502 lbs)<br>
+                                    The McLaren F1 held the title of the world’s fastest production car in 1998 with a top speed of 391 km/h (243 mph),and the world’s first 3 seater production car.<br>
+                                    </p>
+                    </div>
+
+                </div>
+
+                <!-- tab content for offcanvas -->
+                <div class="tab-content offcanvas-content mt-3">
+                    <div class="tab-pane active" id="car11">
+                        <h2>Ferrari Laferrari <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+
+
+                            Name - Ferrari Laferrari<br>
+                            Production - 2013 (499 units produced plus one extra for auction)<br>
+                            Original price - $1,400,000<br>
+                            Current Market Price - $5,000,000 to $7,000,000<br>
+                            Engine - 6.3L naturally aspirated v12<br>
+                            Top speed - 352 km/h (218mph)<br>
+                            Power - 963HP (total)<br>
+                            v12 engine’s - 800HP<br>
+                            electric motor - 163HP<br>
+                            Torque - 900Nm<br>
+                            Transmission - 7 speed dual-clutch automatic<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,585kg (3,495lbs)<br>
+                            First Ferrari Hybrid Hypercar and the most powerful naturally aspirated v12 Ferrari ever
+                            made.
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car21">
+                        <h2>Ferrari F50 <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Ferrari F50 <br>
+                            Production - 1995 - 1997 (349 units produced)<br>
+                            Original Price - $475,000<br>
+                            Current Market Price - $3,500,000 - $5,500,000<br>
+                            Engine - 4.7L naturally Aspirated V12 (From Formula 1)<br>
+                            Top speed - 325km/h (202mph)<br>
+                            Power - 520HP <br>
+                            Torque - 471Nm <br>
+                            Transmission - 6 speed manual<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,230kg (2,712lbs)<br>
+                            First Ferrari with a fully carbon-fiber monocoque chassis, directly influenced by Formula 1
+                            technology.<br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car31">
+                        <h2>Ferrari Enzo <span class="badge rounded-5" style="background-color: #D40000;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Ferrari Enzo <br>
+                            Production - 2002 - 2004 (399 units produced + 1 for the pope)<br>
+                            Original Price - $659,000<br>
+                            Current Market Price - $3,000,000 - $5,000,000 <br>
+                            Engine - 6.0L naturally aspirated v12<br>
+                            Top speed - 355km/h (221mph)<br>
+                            Power - 660HP<br>
+                            Torque - 657Nm<br>
+                            Transmission - 6 speed automated manual (F1 Gearbox)<br>
+                            Drivetrain - RWD (Rear Wheel Drive)<br>
+                            Weight - 1,480kg (3,263lbs)<br>
+                            First naturally aspirated production car of its time and the first Ferrari to feature an
+                            F1-inspired gearbox.<br>
+
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car41">
+                        <h2>Bugatti Veryon Grand Sport Vitesse <span class="badge rounded-5"
+                                style="background-color:#005F9E;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Veryon Grand Sport Vitesse <br>
+                            Production - 2012 - 2015 (92 units produced) <br>
+                            Original Price - $2,500,000<br>
+                            Current Market Price - $3,000,000 - $4,500,000<br>
+                            Engine - 8.0L Quad- Turbocharged W16<br>
+                            Top speed - 408.84km/h (254.04mph) <br>
+                            Power - 1,200HP<br>
+                            Torque - 1,500Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,990kg (4,387lbs)<br>
+                            The fastest open-top production car. <br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car51">
+                        <h2>Bugatti Mistral <span class="badge rounded-5" style="background-color:#005F9E;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Mistral <br>
+                            Production - 2024 - Present (99 units produced) <br>
+                            Original Price - $5,000,000<br>
+                            Current Market Price - $6,000,000+ (Prices expected to rise due to exclusivity)<br>
+                            Engine - 8.0L Quad-Turbocharged W16 <br>
+                            Top speed - 420km/h (261mph)<br>
+                            Power - 1,600HP<br>
+                            Torque - 1,600Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive)<br>
+                            Weight - Estimated around 1,990kg (4,387lbs)<br>
+
+                            Fastest roadster Bugatti has ever produced. <br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car61">
+                        <h2>Bugatti Chiron Super Sport 300+ <span class="badge rounded-5"
+                                style="background-color:#005F9E;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Bugatti Chiron Super Sport 300+ <br>
+                            Production - 2021 - 2022 (30 units produced)<br>
+                            Original Price - $3,900,000<br>
+                            Current Market Price - $5,000,000 - $6,500,000+ <br>
+                            Engine - 8.0L Quad-Turbocharged W16 <br>
+                            Top speed - 490.48km/h (304.77mph) <br>
+                            Power - 1,600HP<br>
+                            Torque - 1,600Nm<br>
+                            Transmission - 7 speed dual-clutch automatic <br>
+                            Drivetrain - AWD (All Wheel Drive)<br>
+                            Weight - 1,995kg (4,398lbs)<br>
+                            First production car to break the 300 mph record.<br>
+                        </p>
+                    </div>
+                    <div class="tab-pane" id="car71">
+                        <h2>Pagani Huayra BC <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Huayra BC <br>
+                            Production - 2016–2019 (Limited to 20 units) <br>
+                            Original Price - $2,500,000 <br>
+                            Current Market Price - $3,500,000+ <br>
+                            Engine - 6.0L Twin-Turbocharged V12 (Mercedes-AMG) <br>
+                            Top Speed - 370 km/h (230 mph) <br>
+                            Power - 791 HP <br>
+                            Torque - 1,050 Nm (774 lb-ft) <br>
+                            Transmission - 7-speed Xtrac sequential manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,218 kg (2,685 lbs) <br>
+                            World Record - One of the lightest and most powerful<br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car81">
+                        <h2>Pagani Huayra Roadster BC <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Huayra Roadster BC <br>
+                            Production - 2019–Present (Limited to 40 units) <br>
+                            Original Price - $3,500,000 <br>
+                            Current Market Price - $4,500,000+ <br>
+                            Engine - 6.0L Twin-Turbocharged V12 (Mercedes-AMG) <br>
+                            Top Speed - 370 km/h (230 mph) <br>
+                            Power - 802 HP <br>
+                            Torque - 1,050 Nm (774 lb-ft) <br>
+                            Transmission - 7-speed Xtrac sequential manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,250 kg (2,755 lbs) <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car91">
+                        <h2>Pagani Zonda HP Barchetta <span class="badge rounded-5" style="background-color:#6F6F6F;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Pagani Zonda HP Barchetta <br>
+                            Production - 2017 (Limited to 3 units) <br>
+                            Original Price - $17,500,000 <br>
+                            Current Market Price - $20,000,000+ <br>
+                            Engine - 7.3L Naturally Aspirated V12 (Mercedes-AMG) <br>
+                            Top Speed - 355 km/h (221 mph) <br>
+                            Power - 789 HP <br>
+                            Torque - 850 Nm (627 lb-ft) <br>
+                            Transmission - 6-speed manual <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,250 kg (2,755 lbs) <br>
+                            World Record - One of the most expensive new cars ever sold <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car101">
+                        <h2>Lamborghini Sian FKP 37 <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Sian FKP 37 <br>
+                            Production - 2020–2021 (Limited to 63 Coupes, 19 Roadsters) <br>
+                            Original Price - $3,600,000 <br>
+                            Current Market Price - $4,500,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 + 48V Hybrid System <br>
+                            Top Speed - 350 km/h (217 mph) <br>
+                            Power - 819 HP (combined) <br>
+                            Torque - 760 Nm (561 lb-ft) <br>
+                            Transmission - 7-speed automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,595 kg (3,516 lbs) <br>
+                            World Record - Lamborghini's first-ever hybrid production car <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car11a1">
+                        <h2>Lamborghini Huracán STO <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Huracán STO <br>
+                            Production - 2021–Present <br>
+                            Original Price - $327,838 <br>
+                            Current Market Price - $400,000+ <br>
+                            Engine - 5.2L Naturally Aspirated V10 <br>
+                            Top Speed - 310 km/h (193 mph) <br>
+                            Power - 640 HP <br>
+                            Torque - 565 Nm (417 lb-ft) <br>
+                            Transmission - 7-speed dual-clutch automatic <br>
+                            Drivetrain - RWD (Rear Wheel Drive) <br>
+                            Weight - 1,339 kg (2,952 lbs) <br>
+                            World Record - One of the lightest and most track-focused<br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car12a1">
+                        <h2>Lamborghini Centenario <span class="badge rounded-5" style="background-color:#7FFF00;"><i
+                                    class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Centenario <br>
+                            Production - 2016–2017 (Limited to 20 Coupes, 20 Roadsters) <br>
+                            Original Price - $1,900,000 <br>
+                            Current Market Price - $2,500,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 <br>
+                            Top Speed - 350 km/h (217 mph) <br>
+                            Power - 770 HP <br>
+                            Torque - 690 Nm (509 lb-ft) <br>
+                            Transmission - 7-speed ISR automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,520 kg (3,351 lbs) <br>
+                            Built to celebrate Lamborghini's 100th anniversary <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car13a1">
+                        <h2>Lamborghini Murciélago LP670-4 SV <span class="badge rounded-5"
+                                style="background-color:#7FFF00;"><i class="bi bi-car-front"></i></span></h2>
+                        <p>
+                            Name - Lamborghini Murciélago LP670-4 SV <br>
+                            Production - 2009–2010 (Limited to 186 units) <br>
+                            Original Price - $450,000 <br>
+                            Current Market Price - $1,000,000+ <br>
+                            Engine - 6.5L Naturally Aspirated V12 <br>
+                            Top Speed - 342 km/h (213 mph) <br>
+                            Power - 670 HP <br>
+                            Torque - 660 Nm (487 lb-ft) <br>
+                            Transmission - 6-speed manual / 6-speed e-gear automated manual <br>
+                            Drivetrain - AWD (All Wheel Drive) <br>
+                            Weight - 1,565 kg (3,450 lbs) <br>
+                        </p>
+                    </div>
+
+                    <div class="tab-pane" id="car14a1">
+                        <h2>McLaren Speedtail <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren Speedtail <br>
+                                    Production - 2019 - 2020 (106 units produced) <br>
+                                    Original Price - $2,250,000 <br>
+                                    Current Market Price - $3,500,000 - $4,000,000+ <br>
+                                    Engine - 4.0L Twin-Turbocharged V8 Hybrid <br>
+                                    Top Speed - 403 km/h (250 mph) <br>
+                                    Power - 1,035 hp(total) <br>
+                                    V8 Engine Power - 746HP
+                                    Electric Motor Power - 308HP<br>
+                                    Torque - 848 Nm (625 lb-ft) <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD (Rear-Wheel Drive) <br>
+                                    Weight - 1,430 kg (3,153 lbs) <br>
+                                    Fastest McLaren road car ever produced<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car15a1">
+                        <h2>McLaren P1 <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren P1 <br>
+                                    Production - 2013 - 2015 (375 units produced) <br>
+                                    Original Price - $1,150,000 <br>
+                                    Current Market Price - $1,800,000 - $2,500,000+ <br>
+                                    Engine - 3.8L Twin-Turbocharged V8 Hybrid <br>
+                                    Top Speed - 350 km/h (217 mph) <br>
+                                    Power - 903 HP (Total) <br>
+                                    V8 Engine Power - 727 HP
+                                    Electric Motor Power - 177 HP
+                                    Torque - 900 Nm <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD <br>
+                                    Weight - 1,490 kg (3,284 lbs) <br>
+                                    One of the first hybrid hypercars and among the fastest production cars of its time.<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car16a1">
+                        <h2>McLaren Senna <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren Senna <br>
+                                    Production - 2018 - 2019 (500 units produced) <br>
+                                    Original Price - £750,000 (Approx. $1,000,000) <br>
+                                    Current Market Price - Around $2,000,000 <br>
+                                    Engine - 4.0L Twin-Turbocharged V8 <br>
+                                    Top Speed - 340 km/h (211 mph) <br>
+                                    Power - 789 hp<br>
+                                    Torque - 800 Nm (590 lb-ft) <br>
+                                    Transmission - 7-speed dual-clutch automatic <br>
+                                    Drivetrain - RWD (Rear-Wheel Drive) <br>
+                                    Weight - 1,198 kg (2,641 lbs) <br>
+                                    Features one of the most advanced braking systems, capable of stopping from 200 km/h (124 mph) in just 100 meters.<br>
+                                    One of the special car named after a famous Brazilian Racer, Ayrton Senna.<br>
+                                    </p>
+                    </div>
+
+                    <div class="tab-pane" id="car17a1">
+                        <h2>McLaren F1 <span class="badge rounded-5"
+                                style="background-color:#FF8000;"><i class="bi bi-car-front"></i></span></h2>
+                                <p>
+                                    Name - McLaren F1 <br>
+                                    Production - 1992–1998 (106 units produced)<br>
+                                    Original Price - Around $1,000,000<br>
+                                    Current Market Price - $15,000,000+ (some models have sold for even higher)<br>
+                                    Engine - 6.1L Naturally Aspirated BMW V12<br>
+                                    Top Speed - 391 km/h (243 mph) (World Record for Fastest Production Car in 1998)<br>
+                                    Power - 627 HP<br>
+                                    Torque - 650 Nm<br>
+                                    Transmission - 6-speed manual<br>
+                                    Drivetrain - RWD<br>
+                                    Weight - 1,140 kg (2,502 lbs)<br>
+                                    The McLaren F1 held the title of the world’s fastest production car in 1998 with a top speed of 391 km/h (243 mph),and the world’s first 3 seater production car.<br>
+                                    </p>
+                    </div>
+
+                </div>
+                <p class="text-light text-center mt-2">Webpage made possible with ❤️ by car lovers from Moai Bois 2.0</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
